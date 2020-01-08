@@ -4,6 +4,9 @@ import Vue from "vue";
 import App from "./App";
 import router from "./router";
 
+// 进入vuex仓库
+import store from "./vuex/store";
+
 // 把axios挂载到vue的原型上
 import axios from "axios";
 Vue.prototype.axios = axios;
@@ -19,6 +22,7 @@ Vue.config.productionTip = false;
 new Vue({
   el: "#app",
   router,
+  store,
   components: { App },
   template: "<App/>"
 });

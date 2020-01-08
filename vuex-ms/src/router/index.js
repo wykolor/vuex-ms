@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
-import login from "@/components/login";
+
+// 页面模块
+import login from "@/pages/login";
+import index from "@/pages/index";
 
 Vue.use(Router);
 
@@ -10,6 +13,11 @@ export default new Router({
       path: "/",
       name: "login",
       component: login
+    },
+    {
+      path: "/index",
+      name: index,
+      component: index
     }
   ]
 });

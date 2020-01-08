@@ -66,14 +66,16 @@ export default {
               // 获取接口响应的数据
               let { code, data, message } = res.data;
 
-              // 将用户信息存入vuex
-
               // 登录成功
               if (code === 1000) {
+                // 将用户信息存入vuex
+                this.$store.commit("SAVE_USERINFO", data);
                 this.$message({
                   message,
                   type: "success"
                 });
+                // 跳转后台首页
+                this.$router.push("/index");
               } else {
                 // 登录失败
                 this.$message.error(message);
